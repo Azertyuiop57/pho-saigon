@@ -1,0 +1,376 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&family=Nunito&display=swap');
+
+/* RESET */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select,
+option {
+    font: inherit;
+}
+
+/* VARIABLES */
+:root {
+    --FF: "Nunito", sans-serif;
+    --FF-HEADINGS: "Fugaz One", cursive;
+    --FS: clamp(1rem, 2.2vh, 1.5rem);
+    --SMALL-FS: clamp(.75rem, 1.75vh, 1.1rem);
+
+
+    --BGCOLOR-FADE: gray;
+    --BGCOLOR: #000;
+    --BGIMAGE: linear-gradient(to bottom, var(--BGCOLOR), var(--BGCOLOR-FADE));
+
+    --FONT-COLOR: whitesmoke;
+    --HIGHLIGHT-FONT-COLOR: rgb(255, 255, 255);
+    --BODY-BGCOLOR: #333;
+    --HIGHLIGHT-BGCOLOR: #393939;
+
+    --HEADER-BGCOLOR: var(--BGCOLOR);
+    --HEADER-FONT-COLOR: var(--HIGHLIGHT-FONT-COLOR);
+    
+    --NAV-BGCOLOR: rgb(20, 20, 20);
+    --NAV-FONT-COLOR: var(--HIGHLIGHT-FONT-COLOR);
+
+    /* --POPUP-BGCOLOR: rgba(51, 178, 51, 0.75); */
+    --POPUP-BGCOLOR: rgba(138, 29, 29, 0.75);
+    --POPUP-FONT-COLOR: #222;
+
+    --BUTTON-BGCOLOR: whitesmoke;
+    --BUTTON-HOVER-BGCOLOR: rgb(212, 212, 212);
+    --BUTTON-ACTIVE-BGCOLOR: rgb(176, 176, 176);
+    --BUTTON-FONT-COLOR: #000;
+
+    --INPUT-BGCOLOR: whitesmoke;
+    --INPUT-FOCUS-BGCOLOR: rgb(225, 225, 225);
+
+    --LINK-COLOR: var(--HIGHLIGHT-FONT-COLOR);
+    --LINK-ACTIVE-COLOR: rgb(252, 200, 103);
+    --LINK-HOVER-COLOR: orange;
+    
+    --BORDER-COLOR: whitesmoke;
+    --BORDERS: 1px solid var(--BORDER-COLOR);
+    --BORDER-RADIUS: 15px;
+
+
+    --PADDING-TB: 0.25em;
+    --PADDING-SIDE: 2.5%;
+
+
+    --MARGIN: clamp(1em, 2.5vh, 1.5em) 0;
+}
+
+
+/* GENERAL STYLES */
+html {
+    scroll-behavior: smooth;
+    font-size: var(--FS);
+    font-family: var(--FF);
+    background-color: var(--BGCOLOR);
+    background-image: var(--BGIMAGE);
+}
+
+body {
+    background-color: var(--BODY-BGCOLOR);
+    color: var(--FONT-COLOR);
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: var(--BORDERS);
+    border-right: var(--BORDERS);
+    box-shadow: 0 0 10px var(--BORDER-COLOR);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--FF-HEADINGS);
+    letter-spacing: 0.1em;
+}
+
+h2,
+h3 {
+    margin-bottom: 1em;
+    color: var(--HIGHLIGHT-FONT-COLOR);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a:any-link {
+    color: var(--LINK-COLOR);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--LINK-HOVER-COLOR);
+}
+
+a:active {
+    color: var(--LINK-ACTIVE-COLOR);
+}
+
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header__h1 {
+    text-align: center;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-FONT-COLOR);
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.header__h1::before {
+    content: '🍜 '
+}
+
+.header__h1::after {
+    content: ' 🍜'
+}
+
+.header__nav {
+    background-color: var(--NAV-BGCOLOR);
+    border-bottom: var(--BORDERS);
+    font-weight: bold;
+    box-shadow: 0 6px 5px -5px var(--BORDER-COLOR);
+}
+
+.header__ul {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+
+/* MAIN */
+.main {
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+}
+
+.main__article {
+    scroll-margin-top: 6.5rem;
+    margin: var(--MARGIN);
+}
+
+.main__article:first-child {
+    margin-top: 1em;
+}
+
+.main__article:last-child {
+    min-height: calc(100vh - 20rem);
+}
+
+.top {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* MAIN IMAGES */
+.main-image {
+    position: relative;
+}
+
+.main-image__popup {
+    background-color: var(--POPUP-BGCOLOR);
+    color: var(--POPUP-FONT-COLOR);
+    padding: 0.25em 0.5em;
+    text-shadow: 2px 2px 5px var(--BORDER-COLOR);
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    animation: animationDeFolie 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes animationDeFolie {
+    0% {
+        top: -10px;
+        transform: skew(0deg, -5deg) scaleY(0);
+    }
+
+    60% {
+        top: 40px;
+        transform: skew(10deg, -5deg) scaleY(1.2);
+    }
+
+    100% {
+        top: 30px;
+        transform: skew(-10deg, -5deg) scaleY(1);
+    }
+}
+
+/* FOOTER */
+.footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    padding: var(--PADDING-TB) var(--PADDING-SIDE);
+    text-align: center;
+}
+
+
+/* index.html */
+.about__block {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: var(--MARGIN);
+    flex-wrap: wrap;
+}
+
+.about__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    text-align: justify;
+}
+
+.about__img {
+    flex-shrink: 0;
+    max-width: 100%;
+    height: auto;
+    border: var(--BORDERS);
+    border-radius: .5rem;
+    box-shadow: 0px 0px 5px var(--BORDER-COLOR);
+}
+
+.about__block:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: var(--BORDER-RADIUS);
+}
+  
+.about__block:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem;
+    border-radius: var(--BORDER-RADIUS);
+}
+
+.about__trivia {
+    margin: var(--MARGIN);
+}
+
+.about__trivia-answer {
+    margin-top: 1em;
+}
+
+
+/* menu.html */
+.menu__container {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.1em;
+    margin-bottom: 1em;
+}
+
+.menu__header,
+.menu__item {
+    padding: 1em;
+    border: medium ridge var(--BORDER-COLOR);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.menu__header {
+    color: var(--HIGHLIGHT-FONT-COLOR);
+    font-weight: bold;
+}
+
+.menu__body-header {
+    background-color: var(--HIGHLIGHT-BGCOLOR);
+    color: var(--HIGHLIGHT-FONT-COLOR);
+    font-weight: bold;
+}
+
+.menu__header--first {
+    border-top-left-radius: var(--BORDER-RADIUS);
+}
+.menu__header--last {
+    border-top-right-radius: var(--BORDER-RADIUS);
+}
+
+.menu__footer-item {
+    font-size: var(--SMALL-FS);
+    border-bottom-left-radius: var(--BORDER-RADIUS);
+    border-bottom-right-radius: var(--BORDER-RADIUS);
+}
+
+
+/* contact.html */
+.location__map-img {
+    border-radius: var(--BORDER-RADIUS);
+    box-shadow: 0px 0px 5px var(--BORDER-COLOR);
+}
+
+
+/* reservation.html */
+.book__h2 {
+    margin: 0;
+}
+
+.book__fieldset {
+    border: none;
+}
+
+.book__p {
+    margin: 1em 0;
+}
+
+.book__label {
+    display: block;
+    font-weight: bold;
+}
+
+.book__input,
+.book__textarea {
+    background-color: var(--INPUT-BGCOLOR);
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    border-width: 2px;
+    width: 100%;
+}
+
+.book__input:focus,
+.book__textarea:focus {
+    background-color: var(--INPUT-FOCUS-BGCOLOR);
+}
+
+.book__button {
+    padding: 0.5em;
+    border-radius: var(--BORDER-RADIUS);
+    background-color: var(--BUTTON-BGCOLOR);
+    color: var(--BUTTON-FONT-COLOR);
+    font-weight: bold;
+}
+
+.book__button:hover {
+    background-color: var(--BUTTON-HOVER-BGCOLOR);
+}
+
+.book__button:active {
+    background-color: var(--BUTTON-ACTIVE-BGCOLOR);
+}   

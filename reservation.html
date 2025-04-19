@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tuân PHAM">
+    <meta name="description" content="Réservation chez Phở Saigon">
+    <title>Réserver - Phở Saigon</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__h1">Pho Saigon</h1>
+        <nav class="header__nav">
+            <ul class="header__ul">
+                <li>
+                    <a href="/">Accueil</a>
+                </li>
+                <li>
+                    <a href="menu.html">Notre Menu</a>
+                </li>
+                <li>
+                    <a href="horaires.html">Contact & Horaires</a>
+                </li>
+                <li>
+                    <a href="reservation.html">Réserver</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="main-image">
+        <img class="main-image__img" src="img/interieur_pho_saigon_1000x1000.png" alt="Intérieur de Phở Saigon" title="Ambiance authentique et chaleureuse" width="1000" height="1000">
+    </section>
+
+    <main class="main">
+        <article class="main__article book">
+            <h2 class="book__h2">Formulaire de Réservation</h2>
+            <form class="book__form">
+                <fieldset class="book__fieldset">
+                    <p class="book__p">
+                        <label class="book__label" for="name">Nom :</label>
+                        <input class="book__input" type="text" name="name" id="name" placeholder="Votre nom" required>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="email">Email :</label>
+                        <input class="book__input" type="email" name="email" id="email" placeholder="Votre email" required>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="tel">Téléphone (facultatif) :</label>
+                        <input class="book__input" type="tel" name="tel" id="tel" placeholder="Votre téléphone">
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="num_persons">Nombre de Personnes (Si plus de 10, contactez-nous) :</label>
+                        <input class="book__input" type="number" name="num_persons" id="num_persons" placeholder="Votre nombre de personnes" min="1" max="10" step="1" required>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="date">Date de Réservation :</label>
+                        <input class="book__input" type="date" name="date" id="date" placeholder="Votre date de réservation" required>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="time">Heure de Réservation :</label>
+                        <input class="book__input" type="time" name="time" id="time" placeholder="Votre heure de réservation" required>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="occasion">Table de Préférence (facultatif et non-garanti) :</label>
+                        <select class="book__input" name="preference" id="preference">
+                            <option value="none" selected>Aucune</option>
+                            <option value="exterior">Terrasse Extérieure</option>
+                            <option value="interior">Cour Intérieure</option>
+                            <option value="large">Grande Salle</option>
+                            <option value="small">Petite Salle</option>
+                        </select>
+                    </p>
+                    <p class="book__p">
+                        <label class="book__label" for="message">Remarques Additionnelles, Préférences ou Restrictions Alimentaires (facultatif) :</label>
+                        <textarea class="book__textarea" name="message" id="message" cols="30" rows="5" placeholder="Tapez vos remarques ici..."></textarea>
+                    </p>
+                </fieldset>
+                <button class="book__button" type="submit">Envoyer</button>
+                <button class="book__button" type="reset">Réinitialiser</button>
+            </form>
+        </article>
+    </main>
+
+    <p class="top">
+        <a href="#">Retour en haut</a>
+    </p>
+    
+    <footer class="footer">
+        <p>
+            Copyright &copy; <time id="year">2025</time>
+            Phở Saigon | Tous droits reservés
+        </p>
+    </footer>
+</body>
+
+</html>
