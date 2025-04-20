@@ -29,6 +29,7 @@ option {
     --FF-HEADINGS: "Sriracha", cursive;
     --FS: clamp(1rem, 2vh, 1.5rem);
     --SMALL-FS: clamp(.75rem, 1.75vh, 1.1rem);
+    --LARGER-FS: clamp(1.15rem, 2.4vh, 1.65rem);
 
 
     --BGCOLOR-FADE: gray;
@@ -307,6 +308,7 @@ a:active {
     background-color: var(--HIGHLIGHT-BGCOLOR);
     color: var(--HIGHLIGHT-FONT-COLOR);
     font-weight: bold;
+    font-size: var(--LARGER-FS);
 }
 
 .menu__header--first {
