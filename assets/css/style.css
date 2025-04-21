@@ -129,13 +129,20 @@ a:any-link {
     color: var(--LINK-COLOR);
 }
 
-a:hover,
-a:focus-visible {
+a:hover {
     color: var(--LINK-HOVER-COLOR);
 }
 
 a:active {
     color: var(--LINK-ACTIVE-COLOR);
+}
+
+.header__li {
+    transition: transform ease-in-out .2s;
+}
+
+.header__li:hover {
+    transform: scale(1.1);
 }
 
 
@@ -196,7 +203,7 @@ a:active {
     margin-bottom: 1em;
 }
 
-/* MAIN IMAGES */
+/* MAIN IMAGE */
 .main-image {
     position: relative;
 }
@@ -264,6 +271,11 @@ a:active {
     border: var(--BORDERS);
     border-radius: .5rem;
     box-shadow: 0 0 5px var(--BORDER-COLOR);
+    transition: transform ease-in-out .2s;
+}
+
+.about__img:hover {
+    transform: scale(1.02);
 }
 
 .about__block {
@@ -336,6 +348,11 @@ a:active {
 .location__map-img {
     border-radius: var(--BORDER-RADIUS);
     box-shadow: 0 0 5px var(--BORDER-COLOR);
+    transition: transform ease-in-out .2s;
+}
+
+.location__map-img:hover {
+    transform: scale(1.02);
 }
 
 .location__text,
@@ -405,27 +422,25 @@ font-weight: bold;
   box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
-.top a {
+.top__a {
     position: fixed;
     right: 1rem;
     bottom: 1rem;
     background-color: var(--DARK-BUTTON-BGCOLOR);
-    color: var(--LINK-COLOR);
     padding: 0.75em 1em;
     border-radius: 50px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    transition: transform 0.2s;
+    transition: transform ease-in-out 0.2s;
 }
 
-.top a:hover {
+.top__a:hover {
     background-color: var(--DARK-BUTTON-HOVER-BGCOLOR);
-    color: var(--LINK-HOVER-COLOR);
     box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    transform: translateY(-2px); 
+    transform: translateY(-2px) scale(1.02); 
 }
 
-.top a:active {
+.top__a:active {
     background-color: var(--DARK-BUTTON-ACTIVE-BGCOLOR);
-    color: var(--LINK-ACTIVE-COLOR);
     box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    transform: scale(1.1);
 }
