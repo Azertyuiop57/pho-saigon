@@ -56,6 +56,11 @@ option {
     --BUTTON-ACTIVE-BGCOLOR: rgb(176, 176, 176);
     --BUTTON-FONT-COLOR: #000;
 
+    --DARK-BUTTON-BGCOLOR: rgba(55, 55, 55, 0.65);
+    --DARK-BUTTON-HOVER-BGCOLOR: rgb(55, 55, 55, 0.55);
+    --DARK-BUTTON-ACTIVE-BGCOLOR: rgb(55, 55, 55, 0.45);
+    --DARK-BUTTON-FONT-COLOR: #000;
+
     --INPUT-BGCOLOR: whitesmoke;
     --INPUT-FOCUS-BGCOLOR: rgb(225, 225, 225);
 
@@ -258,19 +263,21 @@ a:active {
     height: auto;
     border: var(--BORDERS);
     border-radius: .5rem;
-    box-shadow: 0px 0px 5px var(--BORDER-COLOR);
+    box-shadow: 0 0 5px var(--BORDER-COLOR);
+}
+
+.about__block {
+    padding: 1rem;
+    border-radius: var(--BORDER-RADIUS);
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
 .about__block:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 1rem;
-    border-radius: var(--BORDER-RADIUS);
 }
-  
+
 .about__block:nth-child(even) {
     background-color: rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-    border-radius: var(--BORDER-RADIUS);
 }
 
 .about__trivia {
@@ -328,7 +335,7 @@ a:active {
 /* contact.html */
 .location__map-img {
     border-radius: var(--BORDER-RADIUS);
-    box-shadow: 0px 0px 5px var(--BORDER-COLOR);
+    box-shadow: 0 0 5px var(--BORDER-COLOR);
 }
 
 .location__text,
@@ -384,3 +391,41 @@ a:active {
 .book__button:active {
     background-color: var(--BUTTON-ACTIVE-BGCOLOR);
 }   
+
+
+.hours__text dt {
+font-weight: bold;
+}
+
+.location,
+.hours {
+  background: rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: var(--BORDER-RADIUS);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.top a {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: var(--DARK-BUTTON-BGCOLOR);
+    color: var(--LINK-COLOR);
+    padding: 0.75em 1em;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.top a:hover {
+    background-color: var(--DARK-BUTTON-HOVER-BGCOLOR);
+    color: var(--LINK-HOVER-COLOR);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transform: translateY(-2px); 
+}
+
+.top a:active {
+    background-color: var(--DARK-BUTTON-ACTIVE-BGCOLOR);
+    color: var(--LINK-ACTIVE-COLOR);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+}
