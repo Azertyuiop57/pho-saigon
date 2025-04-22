@@ -62,7 +62,7 @@ option {
     --DARK-BUTTON-FONT-COLOR: #000;
 
     --INPUT-BGCOLOR: whitesmoke;
-    --INPUT-FOCUS-BGCOLOR: rgb(225, 225, 225);
+    --INPUT-FOCUS-BGCOLOR: rgb(220, 220, 220);
 
     --LINK-COLOR: var(--HIGHLIGHT-FONT-COLOR);
     --LINK-ACTIVE-COLOR: rgb(252, 200, 103);
@@ -401,34 +401,42 @@ a:active {
     font-weight: bold;
 }
 
-.book__input,
-.book__textarea {
+.book__input {
     background-color: var(--INPUT-BGCOLOR);
     padding: 0.5em;
     border-radius: var(--BORDER-RADIUS);
     border-width: 2px;
     width: 100%;
+    transition: transform ease-in-out .2s;
 }
 
-.book__input:focus,
-.book__textarea:focus {
+.book__input:hover {
+    transform: scaleX(1.015);
+}
+
+.book__input:focus {
     background-color: var(--INPUT-FOCUS-BGCOLOR);
+    transform: scaleX(1.015);
 }
 
 .book__button {
     padding: 0.5em;
+    margin: 0 .25em;
     border-radius: var(--BORDER-RADIUS);
     background-color: var(--BUTTON-BGCOLOR);
     color: var(--BUTTON-FONT-COLOR);
     font-weight: bold;
+    transition: transform ease-in-out .2s;
 }
 
 .book__button:hover {
     background-color: var(--BUTTON-HOVER-BGCOLOR);
+    transform: scale(1.1);
 }
 
 .book__button:active {
     background-color: var(--BUTTON-ACTIVE-BGCOLOR);
+    transform: scale(1.1);
 }   
 
 
