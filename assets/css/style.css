@@ -286,7 +286,7 @@ a:active {
     padding: 1rem;
     border-radius: var(--BORDER-RADIUS);
     box-shadow: 0 0 8px rgba(0,0,0,0.5);
-    transition: transform ease .5s;
+    transition: transform cubic-bezier(.7, 0, .3, 1) .5s;
 }
 
 .about__block:hover {
@@ -450,26 +450,27 @@ font-weight: bold;
 
 .location,
 .hours {
-  background: rgba(255,255,255,0.1);
-  padding: 1.5rem;
-  border-radius: var(--BORDER-RADIUS);
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  transition: transform ease-in-out .2s;
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: var(--BORDER-RADIUS);
+    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    transition: transform ease-in-out .2s;
 }
 
 .location:hover,
 .hours:hover {
-  transform: scale(1.01);
+    transform: scale(1.01);
 }
 
 
-@media screen and (min-width: 1111px) {
+@media screen and (min-width: 1111) {
     .top__a {
         position: fixed;
         right: 1rem;
         bottom: 1rem;
         background-color: var(--DARK-BUTTON-BGCOLOR);
         padding: 0.75em 1em;
+        /* width: 10rem; */
         border-radius: 50px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.4);
         transition: transform ease-in-out 0.2s;
