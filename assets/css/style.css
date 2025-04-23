@@ -462,7 +462,7 @@ font-weight: bold;
 }
 
 
-@media screen and (min-width: 1111) {
+@media screen and (min-width: 1111px) {
     .top__a {
         position: fixed;
         right: 1rem;
