@@ -14,18 +14,26 @@
 <body>
     <header class="header">
         <h1 class="header__h1">Phở Saigon</h1>
-        <nav class="header__nav">
-            <ul class="header__ul">
-                <li class="header__li">
+        <nav class="header__nav nav">
+            <input id="nav-toggle" type="checkbox" class="nav__checkbox" checked>
+            <label for="nav-toggle" class="nav__hamburger">
+                <span class="nav__span nav__span-first"></span>
+                <span class="nav__span nav__span-middle"></span>
+                <span class="nav__span nav__span-last"></span>
+            </label>
+        
+
+            <ul class="nav__ul">
+                <li class="nav__li">
                     <a href="/">Accueil</a>
                 </li>
-                <li class="header__li">
+                <li class="nav__li">
                     <a href="menu.html">Notre Menu</a>
                 </li>
-                <li class="header__li">
+                <li class="nav__li">
                     <a href="horaires.html">Contact & Horaires</a>
                 </li>
-                <li class="header__li">
+                <li class="nav__li">
                     <a href="reservation.html">Réserver</a>
                 </li>
             </ul>
