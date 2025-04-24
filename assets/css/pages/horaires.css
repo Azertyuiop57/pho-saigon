@@ -1,0 +1,38 @@
+/* horaires.css */
+
+@import "variables.css";
+
+.location,
+.hours {
+    background: var(--color-surface-faded2);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform ease-in-out .2s;
+}
+
+.location:hover,
+.hours:hover {
+    transform: scale(1.01);
+    box-shadow: var(--shadow-hover);
+}
+
+.location__text,
+.hours__text {
+    text-align: center;
+}
+
+.hours__text dt {
+    padding-top: .5em;
+    font-weight: bold;
+}
+
+.location__map-img {
+    border-radius: var(--radius);
+    box-shadow: 0 0 5px var(--border-color);
+    transition: transform ease-in-out .2s;
+}
+
+.location__map-img:hover {
+    transform: scale(1.015);
+}

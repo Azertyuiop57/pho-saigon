@@ -1,0 +1,60 @@
+/* menu.css */
+
+@import "variables.css";
+
+.menu__container {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0.1em;
+    margin-bottom: 1em;
+}
+
+.menu__header,
+.menu__item {
+    padding: 1em;
+    border: medium ridge var(--border-color);
+    text-align: center;
+    vertical-align: middle;
+    background-color: var(--color-surface-faded1);
+}
+
+.menu__header {
+    color: var(--color-text-highlight);
+    font-weight: bold;
+}
+
+.menu__body-dish,
+.menu__body-dish-type {
+    color: var(--color-text-highlight);
+    font-weight: bold;
+    font-size: var(--fs-large);
+    transition: transform ease-in-out .2s;
+}
+
+.menu__body-dish {
+    background-color: var(--color-surface-faded3);
+}
+
+.menu__body-dish-type {
+    background-color: var(--color-surface-faded2);
+}
+
+.menu__body-dish:hover,
+.menu__body-dish-type:hover {
+    transform: scale(1.01);
+}
+
+.menu__header--first {
+    border-top-left-radius: var(--radius);
+}
+
+.menu__header--last {
+    border-top-right-radius: var(--radius);
+}
+
+.menu__footer-item {
+    font-size: var(--fs-small);
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
+}

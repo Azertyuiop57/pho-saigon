@@ -1,0 +1,59 @@
+/* variables.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito&display=swap');
+
+:root {
+    --ff-base: "Nunito", sans-serif;
+    --ff-head: "Sriracha", cursive;
+    --fs-base: clamp(1rem, 2vh, 1.5rem);
+    --fs-small: clamp(.75rem, 1.75vh, 1.1rem);
+    --fs-large: clamp(1.15rem, 2.4vh, 1.65rem);
+
+
+    --color-bg: #333;
+    --color-bg-dark: #000;
+    --color-bg-gradient: linear-gradient(to bottom, var(--color-bg-dark), gray);
+    --color-text: whitesmoke;
+    --color-text-dark: #000;
+    --color-text-highlight: #fff;
+    --color-surface: whitesmoke;
+    --color-surface-darker: rgb(220, 220, 220);
+    --color-surface-faded1: rgba(255,255,255,0.05);
+    --color-surface-faded2: rgba(255,255,255,0.10);
+    --color-surface-faded3: rgba(255,255,255,0.15);
+    --color-nav-bg: rgb(20,20,20);
+    --color-link: var(--color-text-highlight);
+    --color-link-hover: orange;
+    --color-link-active: rgb(252,200,103);
+    --color-hamburger: #ddd;
+    --color-hamburger-checked: #888;
+
+    --color-btn: var(--color-surface);
+    --color-btn-hover: rgb(212,212,212);
+    --color-btn-active: rgb(176,176,176);
+    --color-dark-btn: rgba(55,55,55,0.65);
+    --color-dark-btn-hover: rgba(55,55,55,0.55);
+    --color-dark-btn-active: rgba(55,55,55,0.45);
+
+    --color-popup-bg: rgba(138,29,29,0.75);
+    --color-popup-border: rgb(111,24,24);
+    --color-popup-text: #222;
+
+
+    --border-color: whitesmoke;
+    --border: 1px solid var(--border-color);
+    --radius: 15px;
+
+
+    --pad-v: 0.25em;
+    --pad-h: 2.5%;
+    --gap: clamp(1em, 2.5vh, 1.5em) 0;
+
+
+    --shadow: 0 0 8px rgba(0,0,0,.5);
+    --shadow-hover: 0 0 8px rgba(0,0,0,.8);
+    --shadow-top: 0 2px 8px rgba(0,0,0,.4);
+    --shadow-top-hover: 0 2px 8px rgba(0,0,0,.5);
+    --shadow-top-active: 0 2px 8px rgba(0,0,0,.7);
+    --transition: 0.5s cubic-bezier(0.75,0.2,0.05,1.0);
+} 

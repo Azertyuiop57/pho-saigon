@@ -1,0 +1,232 @@
+/* main.css */
+
+@import "variables.css";
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--fs-base);
+    font-family: var(--ff-base);
+    background: var(--color-bg-gradient);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-height: 100vh;
+    max-width: 800px;
+    margin: 0 auto;
+    border-left: var(--border);
+    border-right: var(--border);
+    box-shadow: 0 0 10px var(--border-color);
+}
+
+
+h1,
+h2,
+h3 {
+    font-family: var(--ff-head);
+    font-weight: bold;
+    letter-spacing: 0.02em;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+h2,
+h3 {
+    margin-bottom: 1em;
+    color: var(--color-text-highlight);
+}
+
+p {
+    line-height: 1.5;
+}
+
+a {
+    transition: color ease-in-out .5s;
+}
+
+a:any-link {
+    color: var(--color-link);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+a:active {
+    color: var(--color-link-active);
+}
+
+
+/* HEADER */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header__h1 {
+    text-align: center;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-highlight);
+    padding: var(--pad-v) var(--pad-h);
+}
+
+.header__h1::before {
+    content: '🍜 '
+}
+
+.header__h1::after {
+    content: ' 🍜'
+}
+
+/* NAV */
+.nav__checkbox {
+    position: absolute;
+    top: 2.2vh;
+    left: .65rem;
+    width: 2.5rem;
+    height: 2rem;
+    opacity: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.nav__hamburger {
+    position: absolute;
+    top: 2.5vh;
+    left: 1rem;
+    z-index: 2;
+}
+
+
+.nav__span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 4px 0;
+    background: var(--color-hamburger);
+    border-radius: 3px;
+    z-index: 1;
+    
+    transition: transform var(--transition),
+                background-color var(--transition),
+                opacity var(--transition);
+}
+
+.nav__span-first {
+    transform-origin: top left;
+}
+
+.nav__span-last {
+    transform-origin: bottom left;
+}
+
+.nav__checkbox:checked + .nav__hamburger .nav__span-first {
+    transform: rotate(45deg) translateY(-3px);
+    background-color: var(--color-hamburger-checked);
+}
+  
+.nav__checkbox:checked + .nav__hamburger .nav__span-middle {
+    opacity: 0;
+}
+  
+.nav__checkbox:checked + .nav__hamburger .nav__span-last {
+    transform: rotate(-45deg) translateY(3px);
+    background-color: var(--color-hamburger-checked);
+}
+
+.nav__ul {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    opacity: 0;
+    background-color: var(--color-nav-bg);
+    border-bottom: var(--border);
+    border-right: var(--border);
+    box-shadow: 0 6px 5px -5px var(--border-color);
+    padding: var(--pad-v) var(--pad-h);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform var(--transition), 
+                opacity 0.5s ease;
+}
+
+.nav__checkbox:checked ~ .nav__ul {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.nav__li {
+    font-weight: bold;
+    transition: transform ease-in-out .2s;
+}
+
+.nav__li:hover {
+    transform: scale(1.1);
+}
+
+
+/* MAIN */
+.main {
+    padding: var(--pad-v) var(--pad-h);
+}
+
+.main__article {
+    scroll-margin-top: 6.5rem;
+    margin: var(--gap);
+}
+
+.main__article:first-child {
+    margin-top: 1em;
+}
+
+.top {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+@media screen and (min-width: 1111px) {
+    .top__a {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        background-color: var(--color-dark-btn);
+        padding: 0.75em 1em;
+        border-radius: 50px;
+        box-shadow: var(--shadow-top);
+        transition: transform ease-in-out 0.2s,
+                    box-shadow ease-in-out 0.2s,
+                    background-color ease-in-out 0.2s,
+                    color ease-in-out 0.2s;
+    }
+    
+    .top__a:hover {
+        background-color: var(--color-dark-btn-hover);
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-2px) scale(1.02); 
+    }
+    
+    .top__a:active {
+        background-color: var(--color-dark-btn-active);
+        box-shadow: var(--shadow-top-active);
+        transform: scale(1.1);
+    } 
+}
+
+/* FOOTER */
+.footer {
+    position: sticky;
+    bottom: 0;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-highlight);
+    padding: var(--pad-v) var(--pad-h);
+    text-align: center;
+}

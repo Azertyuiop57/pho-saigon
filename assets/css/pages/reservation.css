@@ -1,0 +1,58 @@
+/* reservation.css */
+
+@import "variables.css";
+
+.book__h2 {
+    margin: 0;
+}
+
+.book__fieldset {
+    border: none;
+}
+
+.book__p {
+    margin: 1em 0;
+}
+
+.book__label {
+    display: block;
+    font-weight: bold;
+}
+
+.book__input {
+    background-color: var(--color-surface);
+    padding: 0.5em;
+    border-radius: var(--radius);
+    border-width: 2px;
+    width: 100%;
+    transition: transform ease-in-out .2s;
+}
+
+.book__input:hover {
+    transform: scaleX(1.015);
+}
+
+.book__input:focus {
+    background-color: var(--color-surface-darker);
+    transform: scaleX(1.015);
+}
+
+.book__button {
+    padding: 0.5em;
+    margin: 0 .25em;
+    border-radius: var(--radius);
+    background-color: var(--color-btn);
+    color: var(--color-text-dark);
+    font-weight: bold;
+    transition: transform ease-in-out .2s;
+}
+
+.book__button:hover {
+    background-color: var(--color-btn-hover);
+    transform: scale(1.1);
+}
+
+.book__button:active {
+    background-color: var(--color-btn-active);
+    transform: scale(1.1);
+}
