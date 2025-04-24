@@ -1,7 +1,5 @@
 /* main.css */
 
-@import "variables.css";
-
 html {
     scroll-behavior: smooth;
     font-size: var(--fs-base);
