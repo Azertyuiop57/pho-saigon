@@ -39,7 +39,7 @@ option {
     --FONT-COLOR: whitesmoke;
     --HIGHLIGHT-FONT-COLOR: rgb(255, 255, 255);
     --BODY-BGCOLOR: #333;
-    --HIGHLIGHT-BGCOLOR: rgb(255, 255, 255, 0.1);
+    --HIGHLIGHT-BGCOLOR: rgba(255, 255, 255, 0.1);
 
     --HEADER-BGCOLOR: var(--BGCOLOR);
     --HEADER-FONT-COLOR: var(--HIGHLIGHT-FONT-COLOR);
@@ -58,10 +58,32 @@ option {
     --BUTTON-ACTIVE-BGCOLOR: rgb(176, 176, 176);
     --BUTTON-FONT-COLOR: #000;
 
+    --HAMBURGER-COLOR: #ccc;
+    --HAMBURGER-CHECKED-COLOR: #888;
+
     --DARK-BUTTON-BGCOLOR: rgba(55, 55, 55, 0.65);
-    --DARK-BUTTON-HOVER-BGCOLOR: rgb(55, 55, 55, 0.55);
-    --DARK-BUTTON-ACTIVE-BGCOLOR: rgb(55, 55, 55, 0.45);
+    --DARK-BUTTON-HOVER-BGCOLOR: rgba(55, 55, 55, 0.55);
+    --DARK-BUTTON-ACTIVE-BGCOLOR: rgba(55, 55, 55, 0.45);
     --DARK-BUTTON-FONT-COLOR: #000;
+
+    --ABOUT-BLOCK-ODD-BGCOLOR: rgba(255, 255, 255, 0.1);
+    --ABOUT-BLOCK-EVEN-BGCOLOR: rgba(255, 255, 255, 0.2);
+    --ABOUT-BLOCK-SHADOW-COLOR: rgba(0,0,0,0.5);
+    --ABOUT-BLOCK-SHADOW-HOVER-COLOR: rgba(0,0,0,1);
+
+    --MENU-DISH-TYPE-BGCOLOR: rgba(255, 255, 255, 0.1);
+    --MENU-DISH-BGCOLOR: rgba(255, 255, 255, 0.15);
+    --MENU-ITEMS-BGCOLOR: rgba(255, 255, 255, 0.05);
+
+    --LOCATION-BGCOLOR: rgba(255, 255, 255, 0.1);
+
+    --DARK-SHADOW: 0 0 8px rgba(0,0,0,.5);
+    --DARK-SHADOW-HOVER: 0 0 8px rgba(0,0,0,.8);
+
+    --TOP-SHADOW-TYPE: 0 2px 8px;
+    --TOP-SHADOW-COLOR: rgba(0,0,0,.4);
+    --TOP-SHADOW-HOVER-COLOR: rgba(0,0,0,.5);
+    --TOP-SHADOW-ACTIVE-COLOR: rgba(0,0,0,.7);
 
     --INPUT-BGCOLOR: whitesmoke;
     --INPUT-FOCUS-BGCOLOR: rgb(220, 220, 220);
@@ -74,6 +96,7 @@ option {
     --BORDERS: 1px solid var(--BORDER-COLOR);
     --BORDER-RADIUS: 15px;
 
+    --BEZIER-ANIMATION: cubic-bezier(0.75,0.2,0.05,1.0);
 
     --PADDING-TB: 0.25em;
     --PADDING-SIDE: 2.5%;
@@ -124,6 +147,10 @@ h3 {
 
 p {
     line-height: 1.5;
+}
+
+a {
+    transition: color ease-in-out .5s;
 }
 
 a:any-link {
@@ -190,12 +217,12 @@ a:active {
     width: 30px;
     height: 4px;
     margin: 4px 0;
-    background: #ccc;
+    background: var(--HAMBURGER-COLOR);
     border-radius: 3px;
     z-index: 1;
     
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
-                background-color 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    transition: transform 0.5s var(--BEZIER-ANIMATION),
+                background-color 0.5s var(--BEZIER-ANIMATION),
                 opacity 0.4s ease;
 }
 
@@ -209,7 +236,7 @@ a:active {
 
 .nav__checkbox:checked + .nav__hamburger .nav__span-first {
     transform: rotate(45deg) translateY(-3px);
-    background-color: #888;
+    background-color: var(--HAMBURGER-CHECKED-COLOR);
 }
   
 .nav__checkbox:checked + .nav__hamburger .nav__span-middle {
@@ -218,18 +245,14 @@ a:active {
   
 .nav__checkbox:checked + .nav__hamburger .nav__span-last {
     transform: rotate(-45deg) translateY(3px);
-    background-color: #888;
+    background-color: var(--HAMBURGER-CHECKED-COLOR);
 }
 
 .nav__ul {
     position: absolute;
     top: 100%;
     width: 100%;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: transform .5s cubic-bezier(0.77,0.2,0.05,1.0), opacity .5s ease;
     opacity: 0;
-
     background-color: var(--NAV-BGCOLOR);
     border-bottom: var(--BORDERS);
     border-right: var(--BORDERS);
@@ -239,6 +262,10 @@ a:active {
     display: flex;
     justify-content: space-evenly;
     gap: 1rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .5s var(--BEZIER-ANIMATION), 
+                opacity .5s ease;
 }
 
 .nav__checkbox:checked ~ .nav__ul {
@@ -357,21 +384,22 @@ a:active {
 .about__block {
     padding: 1rem;
     border-radius: var(--BORDER-RADIUS);
-    box-shadow: 0 0 8px rgba(0,0,0,0.5);
-    transition: transform cubic-bezier(.7, 0, .3, 1) .5s;
+    box-shadow: var(--DARK-SHADOW);
+    transition: transform var(--BEZIER-ANIMATION) .5s, 
+                box-shadow ease-in-out .5s;
 }
 
 .about__block:hover {
-    box-shadow: 0 0 8px rgba(0,0,0,1);
+    box-shadow: var(--DARK-SHADOW-HOVER);
     transform: scale(1.01);
 }
 
 .about__block:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--ABOUT-BLOCK-ODD-BGCOLOR);
 }
 
 .about__block:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--ABOUT-BLOCK-EVEN-BGCOLOR);
 }
 
 .about__trivia {
@@ -398,7 +426,7 @@ a:active {
     border: medium ridge var(--BORDER-COLOR);
     text-align: center;
     vertical-align: middle;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--MENU-ITEMS-BGCOLOR);
 }
 
 .menu__header {
@@ -415,11 +443,11 @@ a:active {
 }
 
 .menu__body-dish {
-    background-color: rgb(255, 255, 255, 0.1);
+    background-color: var(--MENU-DISH-BGCOLOR);
 }
 
 .menu__body-dish-type {
-    background-color: rgb(255, 255, 255, 0.15);
+    background-color: var(--MENU-DISH-TYPE-BGCOLOR);
 }
 
 
@@ -522,16 +550,17 @@ font-weight: bold;
 
 .location,
 .hours {
-    background: rgba(255,255,255,0.1);
+    background: var(--LOCATION-BGCOLOR);
     padding: 1.5rem;
     border-radius: var(--BORDER-RADIUS);
-    box-shadow: 0 0 8px rgba(0,0,0,0.5);
+    box-shadow: var(--DARK-SHADOW);
     transition: transform ease-in-out .2s;
 }
 
 .location:hover,
 .hours:hover {
     transform: scale(1.01);
+    box-shadow: var(--DARK-SHADOW-HOVER);
 }
 
 
@@ -542,21 +571,23 @@ font-weight: bold;
         bottom: 1rem;
         background-color: var(--DARK-BUTTON-BGCOLOR);
         padding: 0.75em 1em;
-        /* width: 10rem; */
         border-radius: 50px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-        transition: transform ease-in-out 0.2s;
+        box-shadow: var(--TOP-SHADOW-TYPE) var(--TOP-SHADOW-COLOR);
+        transition: transform ease-in-out 0.2s,
+                    box-shadow ease-in-out 0.2s,
+                    background-color ease-in-out 0.2s,
+                    color ease-in-out 0.2s;
     }
     
     .top__a:hover {
         background-color: var(--DARK-BUTTON-HOVER-BGCOLOR);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        box-shadow: var(--TOP-SHADOW-TYPE) var(--TOP-SHADOW-HOVER-COLOR);
         transform: translateY(-2px) scale(1.02); 
     }
     
     .top__a:active {
         background-color: var(--DARK-BUTTON-ACTIVE-BGCOLOR);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+        box-shadow: var(--TOP-SHADOW-TYPE) var(--TOP-SHADOW-ACTIVE-COLOR);
         transform: scale(1.1);
     } 
 }
