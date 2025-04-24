@@ -478,7 +478,7 @@ a:active {
 }
 
 .location__map-img:hover {
-    transform: scale(1.02);
+    transform: scale(1.015);
 }
 
 .location__text,
