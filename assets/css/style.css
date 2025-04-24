@@ -42,12 +42,11 @@ option {
     --color-surface-faded1: rgba(255,255,255,0.05);
     --color-surface-faded2: rgba(255,255,255,0.10);
     --color-surface-faded3: rgba(255,255,255,0.15);
-    --color-surface-faded4: rgba(255,255,255,0.20);
     --color-nav-bg: rgb(20,20,20);
     --color-link: var(--color-text-highlight);
     --color-link-hover: orange;
     --color-link-active: rgb(252,200,103);
-    --color-hamburger: #ccc;
+    --color-hamburger: #ddd;
     --color-hamburger-checked: #888;
 
     --color-btn: var(--color-surface);
@@ -194,7 +193,7 @@ a:active {
     
     transition: transform var(--transition),
                 background-color var(--transition),
-                opacity 0.4s ease;
+                opacity var(--transition);
 }
 
 .nav__span-first {
@@ -294,7 +293,7 @@ a:active {
     color: var(--color-popup-text);
     padding: 0.25em 0.5em;
     text-shadow: 2px 2px 5px var(--border-color);
-    border: var(--POPUP-BORDER);
+    border: 1px solid var(--color-popup-border);
     border-radius: 5px;
     position: absolute;
     opacity: 0;
@@ -366,11 +365,11 @@ a:active {
 }
 
 .about__block:nth-child(odd) {
-    background-color: var(--color-surface-faded2);
+    background-color: var(--color-surface-faded1);
 }
 
 .about__block:nth-child(even) {
-    background-color: var(--color-surface-faded4);
+    background-color: var(--color-surface-faded3);
 }
 
 .about__trivia {
