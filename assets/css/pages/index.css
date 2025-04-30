@@ -87,11 +87,3 @@
 .about__block:nth-child(even) {
     background-color: var(--color-surface-faded3);
 }
-
-.about__trivia {
-    margin: var(--gap);
-}
-
-.about__trivia-answer {
-    margin-top: 1em;
-}
